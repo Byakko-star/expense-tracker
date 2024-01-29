@@ -2,6 +2,7 @@
   import Header from './components/Header.vue';
   import Balance from './components/Balance.vue';
   import IncomeExpenses from './components/IncomeExpenses.vue';
+  import TransactionList from './components/TransactionList.vue';
   import AddTransaction from './components/AddTransaction.vue';
   import {ref, computed} from 'vue';
 
@@ -53,6 +54,7 @@
 const generateUniqueId = () => {
   return Math.floor(Math.random() * 10000000)
 }
+
 </script>
 
 <template>
@@ -60,6 +62,7 @@ const generateUniqueId = () => {
   <div class="container">
     <Balance :total="total"></Balance>
     <IncomeExpenses :income="income" :expense="expense"></IncomeExpenses>
+    <TransactionList :transactions="transactions" @transactionDeleted="handleTransactionDeleted"></TransactionList>
     <AddTransaction @transactionSubmitted="handleTransactionSubmitted"></AddTransaction>
     {{ transactions }}
     
