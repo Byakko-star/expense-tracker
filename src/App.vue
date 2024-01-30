@@ -91,7 +91,7 @@ onMounted(() => {
     <TransactionList :transactions="transactions" @transactionDeleted="handleTransactionDeleted"></TransactionList>
 
     <AddTransaction @transactionSubmitted="handleTransactionSubmitted"></AddTransaction>
-    <!-- {{ transactions }} -->
+    {{ transactions }}
     
   </div>
 </template>
